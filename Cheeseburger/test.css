@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+    font-family: helvetica;
+  }
+  .item {
+    width: 600px;
+    height: 400px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .item img {
+    position: absolute;
+    max-width: 100%;
+    height: 100%;
+    z-index: 1;
+  
+  }
+  .item .caption {
+    width: 100%;
+    height: 200px;
+    background-color: firebrick;
+    position: relative;
+    z-index: 9;
+    top: 400px;
+    padding: 5px 20px;
+  }
+  .item .caption h3 {
+    color: white;
+    margin: 10px 0;
+  }
+  .item .caption p {
+    color: white;
+    margin: 0;
+    font-style: italic;
+  }
+  .item .caption a {
+    color: white;
+    float: right;
+    background-color: orange;
+    padding: 10px;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+  .item .caption a:hover {
+    
+  }
+  .item:hover img {
+    animation-duration: 1s;
+    animation-name: image;
+  }
+  .item:hover .caption {
+    animation-duration: 1s;
+    animation-name: caption;
+  }
+
+  @keyframes caption {
+    from {top: 394px }
+    to {top: 210px}
+  }
+
+  @keyframes image {
+    from {transform: scale(1); }
+    to {transform: scale(1.2);}
+  }
+  

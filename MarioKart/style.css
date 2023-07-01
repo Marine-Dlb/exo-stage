@@ -1,0 +1,160 @@
+/*// BASE STYLES //*/
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+  }
+  .grass, .sky, .road{
+    position: relative;
+  }
+  .sky{
+    height: 40%;
+    background-color: skyblue;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.33))
+  }
+  .grass{
+    height: 30%;
+    background-color: seagreen;
+    background-image: linear-gradient(to top, rgba(255,255,255,0) 75%, rgba(255,255,255,.25))
+  }
+  .road{
+    height: 30%;
+    background: dimgrey;
+    box-sizing: border-box;
+    border-top: 10px solid grey;
+    border-bottom: 10px solid grey;
+    width: 100%;
+  }
+  /*// ELEMENTS TO ANIMATE //*/
+  .mario{
+    position: absolute;
+    top: -50px;
+    left: 0;
+    animation-name: drive;
+    animation-duration: 4s;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: 5;
+    
+
+  }
+  .luigi{
+    position: absolute;
+    top: -20px;
+    left: -50px;
+    z-index: 55;
+    animation-name:  luigi;
+    animation-duration: 5s;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-delay: 1s;
+    animation-timing-function:  linear;
+    animation-iteration-count: infinite;
+  }
+  .cloud{
+    position: absolute;
+    top: 120px;
+    left: 0px;
+  }
+  .cloud2{
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    max-width: 200px;
+  }
+  .cloud{
+    animation-name: cloud-move;
+    animation-duration: 7s;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .cloud2{
+    animation-name: cloud-move2;
+    animation-duration: 7s;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-delay: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+     
+  }
+  .lines{
+    box-sizing: border-box;
+    border: 5px dashed #fff;
+    height: 0px;
+    width: 6500px;
+    position: absolute;
+    top: 45%;
+    left: 0;
+    animation-name: lines-move;
+    animation-duration: 1s;
+    animation-direction: linear;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  /*// KEYFRAMES //*/
+  @keyframes drive {
+    0%{
+      top: -50px; left: -6px; transform: rotate(0deg);
+      }
+    48% {
+      top: -50px; transform: rotate(0deg);
+      }
+    49% {
+      top: -50px; transform: rotate(-90deg);
+      }
+    50% {
+      top: -160px;
+      transform: rotate(-90deg);
+      }
+    51% {
+      top: -50px; transform: rotate(90deg);
+      }
+    52% {
+      top: -50px; transform: rotate(0deg);
+      }
+    100%{
+      top: -50px; left: 1350px; transform: rotate(0deg);
+    }
+  }
+  @keyframes luigi {
+    0%{
+      top: -6px;
+    }
+    100%{
+      left: 1350px;
+      
+    }
+  }
+  @keyframes cloud-move {
+    0%{ left: 1000px; right: -50px;
+      
+    }
+    
+    100%{ left: -250px; right: 1000px; 
+    }
+  }
+
+  @keyframes cloud-move2 {
+    0%{ left: 1000px; right: -50px;
+      
+    }
+    
+    100%{left: -200px; right: 1000px;
+    }
+  }
+  @keyframes lines-move {
+    from{right: 100px;}
+      to{left: -100%;}
+    
+  }
